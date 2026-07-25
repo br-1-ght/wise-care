@@ -1,0 +1,87 @@
+import type { Service } from "../types/provider";
+
+export const homeVisitServices: Service[] = [
+  {
+    id: "hv-general",
+    category: "home-visit",
+    title: "General Physician Home Visit",
+    description: "A licensed general practitioner assesses, diagnoses, and treats common conditions at home.",
+    durationMinutes: 40,
+    price: 50000,
+    currency: "NGN",
+    availability: "Available now",
+    tags: ["Most popular", "GP"],
+  },
+  {
+    id: "hv-nurse",
+    category: "home-visit",
+    title: "Registered Nurse Visit",
+    description: "Wound care, injections, vitals monitoring, and post-op support from a licensed nurse.",
+    durationMinutes: 30,
+    price: 35000,
+    currency: "NGN",
+    availability: "Available now",
+    tags: ["Nursing care"],
+  },
+  {
+    id: "hv-specialist",
+    category: "home-visit",
+    title: "Specialist Consultation",
+    description: "Cardiology, pediatrics, gynecology, and other specialties dispatched to your home.",
+    durationMinutes: 45,
+    price: 100000,
+    currency: "NGN",
+    availability: "Available today",
+    tags: ["Specialist"],
+  },
+  {
+    id: "hv-emergency",
+    category: "home-visit",
+    title: "Priority Emergency Dispatch",
+    description: "Fastest available provider, prioritised dispatch for urgent (non-112) situations.",
+    durationMinutes: 30,
+    price: 170000,
+    currency: "NGN",
+    availability: "Available now",
+    emergency: true,
+    tags: ["Priority", "Fastest arrival"],
+  },
+];
+
+export const phoneServices: Service[] = [
+  {
+    id: "pc-voice",
+    category: "phone-consultation",
+    title: "Voice Consultation",
+    description: "Speak directly with a licensed doctor by phone for triage, prescriptions, or advice.",
+    durationMinutes: 15,
+    price: 15000,
+    currency: "NGN",
+    availability: "Available now",
+    tags: ["Fastest"],
+  },
+  {
+    id: "pc-video",
+    category: "video-consultation",
+    title: "Video Consultation",
+    description: "Face-to-face video visit with a doctor — ideal for visual symptoms and follow-ups.",
+    durationMinutes: 20,
+    price: 25000,
+    currency: "NGN",
+    availability: "Available now",
+    tags: ["Video"],
+  },
+  {
+    id: "pc-specialist",
+    category: "phone-consultation",
+    title: "Specialist Phone Consultation",
+    description: "Phone access to cardiologists, dermatologists, pediatricians, and more.",
+    durationMinutes: 20,
+    price: 40000,
+    currency: "NGN",
+    availability: "Limited availability",
+    tags: ["Specialist"],
+  },
+];
+
+export const allServices: Service[] = [...homeVisitServices, ...phoneServices];

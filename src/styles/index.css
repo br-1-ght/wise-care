@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-brand-surface text-brand-text font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-green ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  /* Some mobile browsers force-darken native form controls (inputs, selects,
+     buttons) when the OS/browser is in dark mode, which can render text as
+     white-on-white since this app has no dark theme. `color-scheme: light`
+     above is the primary fix; these rules are a defensive backstop so text
+     inside any native control always stays readable. */
+  input, textarea, select, button {
+    color-scheme: light;
+  }
+  select option {
+    background-color: #ffffff;
+    color: #1A2E22;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6;
+  }
+  .sr-only-focusable:not(:focus) {
+    @apply sr-only;
+  }
+}
+
+/* Skeleton loading shimmer */
+.skeleton {
+  @apply relative overflow-hidden bg-brand-green-light/60;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
